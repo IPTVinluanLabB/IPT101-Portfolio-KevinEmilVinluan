@@ -1,3 +1,5 @@
+//CHecked: IPtTeacherJonas Thurs November 12 9:49AM
+
 const studentProfile = {
     Name:"Vinluan, Kevin Emil B.",
     ID:"2026-6648",
