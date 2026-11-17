@@ -1,3 +1,6 @@
+//CHecked: IPtTeacherJonas Thurs November 12 9:49AM
+
+// 1. Store Student Details
 const studentProfile = {
     Name:"Vinluan, Kevin Emil B.",
     ID:"2026-6648",
@@ -5,6 +8,7 @@ const studentProfile = {
     Program:"Information Technology"
 }
 
+// 2. Store Enrolled Courses with corresponding units & grades
 const enrolledCourses = {
     "Arts Appreciation": { units: 3, grade: 92 },
     "Networking 1": { units: 3, grade: 98},
@@ -14,7 +18,9 @@ const enrolledCourses = {
     "Pathfit 4: Sports and Adventure Activities": { units: 2, grade: 89}
 }
 
+
 // GWA Calculation
+// 3. Calculate total units across all enrolled courses
 const totalUnits = 
     enrolledCourses["Arts Appreciation"].units +
     enrolledCourses["Networking 1"].units +
@@ -23,7 +29,7 @@ const totalUnits =
     enrolledCourses["Integrative Programming and Technologies"].units +
     enrolledCourses["Pathfit 4: Sports and Adventure Activities"].units;
 
-
+// 4. Calculate total weighted grade by multipying units by grade for each course
 const totalWeightedGrade =
     (enrolledCourses["Arts Appreciation"].units * enrolledCourses["Arts Appreciation"].grade) +
     (enrolledCourses["Networking 1"].units * enrolledCourses["Networking 1"].grade) +
@@ -32,44 +38,40 @@ const totalWeightedGrade =
     (enrolledCourses["Integrative Programming and Technologies"].units * enrolledCourses["Integrative Programming and Technologies"].grade) +
     (enrolledCourses["Pathfit 4: Sports and Adventure Activities"].units * enrolledCourses["Pathfit 4: Sports and Adventure Activities"].grade)
 
-// Formula 
+// 5. Compute the General Weighted Average (GWA)
 const gwa = totalWeightedGrade / totalUnits;
 
+// 6. To Determine the equivalent letter grade
 let letterGrade = "";
 
-if (gwa >= 98) {
+// Conditional Statement to determine the letter grade using boolean AND (&&) 
+if (gwa >= 98 && gwa <= 100) {
     letterGrade = "A";
-} else if (gwa >= 94) {
+} else if (gwa >= 94 && gwa < 98) {
     letterGrade = "A-";
-} else if (gwa >= 90) {
+} else if (gwa >= 90 && gwa < 94) {
     letterGrade = "B+";
-} else if (gwa >= 87) {
+} else if (gwa >= 87 && gwa < 90) {
     letterGrade = "B";
-} else if (gwa >= 83) {
+} else if (gwa >= 83 && gwa < 87) {
     letterGrade = "B-";
-} else if (gwa >= 80) {
+} else if (gwa >= 80 && gwa < 83) {
     letterGrade = "C+";
-} else if (gwa >= 77) {
+} else if (gwa >= 77 && gwa < 80) {
     letterGrade = "C";
-} else if (gwa >= 73) {
+} else if (gwa >= 73 && gwa < 77) {
     letterGrade = "D";
-} else if (gwa <= 72) {
+} else if (gwa >= 0 && gwa < 73) {
     letterGrade = "F";
 }
 
+// 7. Display the Student Profile Details
 console.log("Student Name: ", studentProfile.Name)
 console.log("ID Number: ", studentProfile.ID)
 console.log("Year Level: ", studentProfile.YearLevel)
 console.log("Program: ", studentProfile.Program)
 
-// Courses Enrolled
-// console.log("\n=Courses Enrolled=")
-// console.log("Arts Appreciation")
-// console.log("Networking 1")
-// console.log("Event-Driven Programming")
-// console.log("App Development and Emerging Technologies")
-// console.log("Integrative Programming and Technologies")
-// console.log("Pathfit 4: Sports and Adventure Activities")
+// 8. Display enrolled courses along with units and grades
 console.log("\n=Courses Enrolled=");
 console.log(`Arts Appreciation - Units: ${enrolledCourses["Arts Appreciation"].units} | Grade: ${enrolledCourses["Arts Appreciation"].grade}`);
 console.log(`Networking 1 - Units: ${enrolledCourses["Networking 1"].units} | Grade: ${enrolledCourses["Networking 1"].grade}`);
@@ -78,5 +80,6 @@ console.log(`App Development and Emerging Technologies - Units: ${enrolledCourse
 console.log(`Integrative Programming and Technologies - Units: ${enrolledCourses["Integrative Programming and Technologies"].units} | Grade: ${enrolledCourses["Integrative Programming and Technologies"].grade}`);
 console.log(`Pathfit 4: Sports and Adventure Activities - Units: ${enrolledCourses["Pathfit 4: Sports and Adventure Activities"].units} | Grade: ${enrolledCourses["Pathfit 4: Sports and Adventure Activities"].grade}`);
 
+// 9. Display final GWA and letter grade results
 console.log("\nGeneral Weighted Average:", gwa)
 console.log("Letter Grade:", letterGrade)
