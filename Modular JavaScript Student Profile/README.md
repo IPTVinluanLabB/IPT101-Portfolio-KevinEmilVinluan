@@ -15,7 +15,7 @@
 > When a method runs, `this` points directly to the object that called it, letting you access its properties by writing `this.propertyName`.
 
 ### 3. Why is modularizing code using `import` and `export` useful in modern JavaScript development?
-> Modularizing code breaks large applications into smaller, self-contained files, making the codebase much easier to organize, debug, reuse, and maintain.
+> Modularizing code breaks large applications into smaller, self-contained files, making the codebase much easier to organize, debug, and maintain.
 
 ### 4. Why is it important to run `git pull origin main` before creating new folders and pushing commits to your main repository?
 > Because it updates the local repository with the latest changes from the remote branch, ensuring you are working on the most current version of the project to prevent merge conflicts and to avoid rejected pushes from being out of sync.
